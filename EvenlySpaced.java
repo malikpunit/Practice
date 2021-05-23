@@ -1,5 +1,6 @@
 class EvenlySpaced{
 
+  //https://codingbat.com/prob/p198700
   public boolean evenlySpaced(int a, int b, int c) {
   //1. sort them
   //2. check diff(medium-small) == (large-medium)
