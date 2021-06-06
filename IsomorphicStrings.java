@@ -7,14 +7,17 @@ class IsomorphicStrings {
         int len = s.length();
         for(int i=0; i<len; i++){
             
-            if(mappingS2T.containsKey(s.charAt(i))  && (mappingS2T.get(s.charAt(i)) != t.charAt(i))){
-                return false;    
-            }
-            
-            if(mappingS2T.containsValue(t.charAt(i)) && !mappingS2T.containsKey(s.charAt(i))){
+            char charS = s.charAt(i);
+            char charT = t.charAt(i);
+            if(mappingS2T.containsKey(charS)){
+                if((mappingS2T.get(charS) != charT)){
+                    return false;        
+                }
+                
+            } else if(mappingS2T.containsValue(charT)){
                 return false;
             }
-            mappingS2T.put(s.charAt(i), t.charAt(i));
+            mappingS2T.put(charS, charT);
         }
         return true;
     }
